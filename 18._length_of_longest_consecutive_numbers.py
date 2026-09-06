@@ -1,10 +1,11 @@
-def longest_consecutive(number):
+def longest_consecutive(numbers):
+    seen = set(numbers) # using set for better complexity as set easy to traverse
     longest = 0
-    for i in number:
-        if i-1 not in number:
+    for i in seen:
+        if i-1 not in seen:
             current = i
             count = 1
-            while current+1 in number:
+            while current+1 in seen:
                 current += 1
                 count += 1
 
