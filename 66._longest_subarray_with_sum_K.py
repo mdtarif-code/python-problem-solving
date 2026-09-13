@@ -14,8 +14,9 @@ def longest_subarray(numbers,k):
 
         if pre_sum in seen:
             lenn = max(lenn,(i - seen[pre_sum]))
-            
-        seen[running_sum] = i
+
+        if running_sum not in seen:   
+            seen[running_sum] = i
     
     return lenn
 
